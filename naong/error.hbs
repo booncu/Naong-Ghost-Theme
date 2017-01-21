@@ -1,0 +1,23 @@
+{{!< default}}
+
+<main id="ng-wrapper-mainbody" class="ng_post_error" role="main">
+	<div class="wrap-background{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+		<div class="ng-overlay-post-error">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="ng_block">
+						
+							<article class="ng-post-content-error">
+								<h1 class="animated flipInX">404</h1>
+								<p><span id="typed"></span></p>
+								<a class="btn btn-large btn-danger" href="{{@blog.url}}">Back to All Post</a> 
+							</article>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

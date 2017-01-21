@@ -1,0 +1,136 @@
+{{!< default}}
+
+{{! Header & Navigation }}
+
+	<header id="ng-header">
+		<div class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle bounceInDown animated" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					   {{#if @blog.logo}}<a class="navbar-brand" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="" /></a>{{else}}<a class="navbar-brand text" href="{{@blog.url}}">naong</a>{{/if}}
+				</div>
+
+				 {{navigation}}
+
+			</div>
+		</div>
+	</header>
+
+{{! The main cover area on the post page }}
+
+<section id="ng-cover">
+	{{#post}}
+		<div class="ng-blog-cover"	style="{{^if image}}background-image: url({{@blog.cover}}){{else}}background-image: url({{image}}){{/if}}">
+			<div class="ng-overlay-cover jumbotron">
+				<div class="container">
+
+					<article class="{{post_class}}_inner">
+				         <div class="ng_post_header">
+				                <h1 class="ng_post_title">{{{title}}}</h1>
+				         </div>
+						<div class="ng_post_meta">
+								{{#if featured}}
+				                    <span class="ng_featured_post"><span class="fa fa-bookmark"></span> <span>Featured</span></span>
+								{{/if}}
+				                  <span class="ng_post_author"><span class="fa fa-user"></span> {{author}}</span>
+				                  <time class="ng_post_time" datetime="{{date format='YYYY-MM-DD'}}"><span class="fa fa-calendar-o"></span> {{date format="DD MMM YYYY"}}</time>
+				                  <span class="ng_post_tags">{{#if tags}}<span class="fa fa-tags"></span>{{/if}} {{tags}}</span>
+				        </div>
+				     </article>
+
+				</div>
+			 </div>
+		 </div>
+	{{/post}}
+</section>
+
+{{! The main content area on the post page }}
+
+<main id="ng-wrapper-mainbody" class="ng_post">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				 {{#post}}
+					<div class="ng_block">
+
+						{{! The content }}
+						<article class="{{post_class}}">
+							<div class="ng_post_content">
+								{{content}}
+							</div>
+
+							{{! The social share embed }}
+							<div class="social-share-post">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="text-soc-l pull-left">
+											<span class="text-soc">share This post</span>
+										</div>
+										<div class="soc-inner pull-right">
+											<a class="btn btn-default" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"onclick="window.open(this.href, 'facebook-share', 'width=580,height=296');return false;"><i class="fa fa-facebook"></i></a>
+											<a class="btn btn-default" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter"></i></a>
+											<a class="btn btn-default" href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="javascript:window.open(this.href,  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							{{! The author post  }}
+							<div class="ng_author">
+								<div class="row">
+									{{#author}}
+										<section class="author-profile-bottom inner">
+											<div class="col-md-2">
+													<div class="author-image">
+													{{#if image}}
+														 <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+													{{/if}}
+													</div>
+												</div>
+												<div class="col-md-10">
+													<h2 class="author-title">{{name}}</h2>
+													<p class="author-bio">{{bio}}</p>
+													<div class="author-meta">
+														{{#if website}}<span class="author-link icon-link"><i class="fa fa-globe"></i><a href="{{website}}">{{website}}</a></span>{{/if}}
+														{{#if location}}<span class="author-location icon-location"><i class="fa fa-map-marker"></i>{{location}}</span>{{/if}}
+													</div>
+											</div>
+										</section>
+									{{/author}}
+								</div>
+							</div>
+
+							{{! The widget disqus }}
+							{{> "widgets/ng-disqus"}}
+
+						</article>
+					</div>
+				{{/post}}
+			</div>
+		</div>
+	</div>
+</main>
+
+{{! Footer area }}
+
+<footer id="ng-footer" class="ng-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="ng-block-footer">
+						<a class="btn btn-default" href="#"><i class="fa fa-facebook"></i></a>
+						<a class="btn btn-default" href="#"><i class="fa fa-twitter"></i></a>
+						<a class="btn btn-default" href="#"><i class="fa fa-linkedin"></i></a>
+						<a class="btn btn-default" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i></a>
+						<div class="ng-copyright">
+							<p>All content <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}. Proudly published with <a href="https://ghost.org">Ghost</a></p>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

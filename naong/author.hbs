@@ -1,0 +1,146 @@
+{{!< default}}
+
+{{! Header & Navigation }}
+
+	<header id="ng-header">
+		<div class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle bounceInDown animated" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>	
+					   {{#if @blog.logo}}<a class="navbar-brand" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="" /></a>{{else}}<a class="navbar-brand text" href="{{@blog.url}}">naong</a>{{/if}}
+				</div>
+				 
+				 {{navigation}}
+				 
+			</div>
+		</div>
+	</header>	
+	
+{{! The main cover area on the author page }}
+
+	<section id="ng-showcase">
+		<div class="ng-blog-cover {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+			<div class="ng-overlay-cover jumbotron">
+				<div class="container">
+					<div class="row">		
+					
+							{{#author}}							
+								<section class="author-profile inner">
+									<div class="col-md-2">										
+										<div class="author-image">
+											{{#if image}}
+												 <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+											{{/if}}
+										</div>										
+									</div>
+									<div class="col-md-10">
+										<h1 class="author-title">{{name}}</h1>
+										<p class="author-bio">{{bio}}</p>
+											<div class="author-meta">
+												<ul>
+												{{#if website}}
+													<li class="web"><span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span></li>
+												{{/if}}												
+												{{#if location}}
+													<li class="map"><span class="author-location icon-location">{{location}}</span></li>	
+												{{/if}}
+													<li class="pencil"><span class="author-stats">{{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span></li>
+												</ul>
+											</div>
+									</div>
+								</section>								
+							{{/author}}
+							
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+{{! The main content area on the author page }}
+
+<main id="ng-wrapper-mainbody" class="ng_frontpage" role="main">
+	<div class="container">
+		<div class="row">
+			<div class="ng-container col-md-12">
+			
+				{{! Post include feature badge }}
+				{{#foreach posts}}
+					{{#if featured}}
+						<article class="{{post_class}} item ng_block animated fadeIn">
+							<div class="grid">
+								<div class="effect-winston">
+									<div class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+											<div class="mask">
+												<div class="shapes-feature">
+													<div class="shape-inner">
+														<span class="ng_featured_post"><i class="fa fa-star-o"></i></span>
+													</div>
+												</div>
+												<div class="ng_post_meta">
+													<span class="ng_post_time" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</span>
+												</div>
+												<h3 class="ng_post_title"><a href="{{url}}">{{{title}}}</a></h3>												
+												<p>{{excerpt characters="50"}}...</p>
+											</div>
+									</div>	
+								</div>	
+							</div>
+						</article>
+					{{/if}}
+				{{/foreach}}
+				
+				{{! Post not include feature badge }}
+				{{#foreach posts}}
+					{{#unless featured}}
+						<article class="{{post_class}} item ng_block animated fadeIn">
+							<div class="grid">
+								<div class="effect-winston">
+									<div class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+											<div class="mask">
+											<div class="ng_post_meta">
+													<span class="ng_post_time" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</span>
+												</div>
+												<h3 class="ng_post_title"><a href="{{url}}">{{{title}}}</a></h3>												
+												<p>{{excerpt characters="50"}}...</p>
+											</div>
+									</div>				
+								</div>	
+							</div>
+						</article>
+					{{/unless}}
+				{{/foreach}}
+				
+			</div>
+		</div>
+	</div>
+</main>
+
+{{! Pagination }}
+
+{{pagination}}
+
+
+{{! Footer area }}
+
+<footer id="ng-footer" class="ng-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="ng-block-footer">
+						<a class="btn btn-default" href="#"><i class="fa fa-facebook"></i></a>
+						<a class="btn btn-default" href="#"><i class="fa fa-twitter"></i></a>
+						<a class="btn btn-default" href="#"><i class="fa fa-linkedin"></i></a>
+						<a class="btn btn-default" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i></a>
+						<div class="ng-copyright">
+						<p>All content <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}. Proudly published with <a href="https://ghost.org">Ghost</a></p>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

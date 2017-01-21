@@ -1,0 +1,582 @@
+/* ==========================================================================
+   Table of Contents
+   ========================================================================== */
+
+/*
+
+    0.  General Post style
+    1.  Badge feature
+    2.  Home style
+	3.  Archive style
+    4.  Post style
+    5.  Tags style
+    6.  Author style
+	7.  Static page style
+	8.  Grid style
+	9.  Disqus style
+	10. Media Queries
+	
+*/
+
+
+/*************************
+	0.General Post style
+*************************/
+
+.post-head.main-header {
+    height: 100%;
+	max-width: 100%;
+    min-height: 237px;	
+}
+
+.main-header {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    height: 100%;
+    margin-bottom: 1px;
+    margin-left: 1px;
+    overflow: hidden;
+    position: relative;
+}
+
+.main-header.no-cover { background-color: #F4F4F4; }
+.home-template .main-header.no-cover .post:first-child { background-color: #A5A5A5; }
+
+
+/*************************
+	1.Badge feature 
+*************************/
+
+.ng_featured_post {
+	font-size: 15px;
+    margin: 6px 8px;
+    right: 0;
+    top: 0;
+}
+
+.shapes-feature{ 
+	background-color: #ed1a23;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;    
+}
+
+
+/*************************
+	2.Home style 
+*************************/
+
+.home-template .post, .archive-template .post {
+	float: left;
+    width: 25%;
+	-webkit-transition: width 2s, height 2s,-webkit-transform 2s; 
+    transition: width 2s, height 2s, transform 2s;
+}
+
+.home-template .post:first-child {height: 475px; width: 50%;}
+.home-template .post:nth-child(10n+0){height: 475px; width: 50%;}
+.home-template .ng_featured_post {display: block; margin: 6px 8px;}
+
+
+/*************************
+	3.Archive style or paged 
+*************************/
+
+.archive-template .post {
+	float: left;
+    width: 25%;
+}
+
+.archive-template .post:first-child { height: 475px; width: 50%; }
+
+
+/************************* 
+	4.Post style
+*************************/
+
+.post-template .ng_post_header h1{ text-align: left; }
+.ng_post_meta {  
+	font-family: 'open sans',arial;
+    font-size: 14px;
+	position: relative;
+}
+
+.ng_post_meta a { color: #fff; }
+.ng_post_meta .fa { margin-right: 5px; }
+.post-template .ng_featured_post { margin-left: 0px; }
+.ng_post_time, .ng_post_author, .ng_post_tags, .ng_featured_post { margin-right: 10px; }
+.post-template .author-meta { font-family: open sans; }
+.post-template .author-profile-bottom  p {
+	font-family: open sans;
+    font-size: 12px;
+}
+
+.ng_post_content, .social-share-post, .ng_author { margin-bottom: 70px; }
+.post-template .author-meta a { color: #777777!important; }
+.post-template .author-meta i { margin-right: 10px; }
+.post-template .author-meta span {
+	font-size: 12px;
+    margin-right: 10px;
+}
+
+.social-share-post {
+	border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 30px 0;
+}
+
+.social-share-post span {
+	color: #ccc;
+    font-family: open sans;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.soc-inner .btn {
+	background: none repeat scroll 0 0 #ccc;
+    border: 0 none;
+    border-radius: 50%;
+    color: #fff;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 2px;
+    padding: 0;
+    text-align: center;
+    width: 32px;
+}
+
+.soc-inner .btn:hover { background-color: #ed1a23; }
+
+
+/*************************
+	5.Tags style
+*************************/
+
+.tag-template .post {
+	float: left;
+    width: 25%;
+
+}
+
+.tag-template .post { height: 475px; width: 20%; }
+.tag-template .post:first-child { height: 475px; width: 20%; }
+.tag-template .ng_post_meta { font-size: 10px; }
+.tag-template .effect-winston .ng_post_meta{
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,20px,0);
+	transform: translate3d(0,20px,0);
+}
+
+.tag-template .effect-winston:hover .ng_post_meta {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.tag-template .effect-winston .no-cover .ng_post_meta {
+	color: #666666;
+	opacity: 1;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(0,20px,0);
+	transform: translate3d(0,20px,0);
+}
+
+.tag-template .effect-winston:hover .no-cover .ng_post_meta {
+	color: #fff!important;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.tag-template .effect-winston .no-cover .ng_post_meta a { color: #777777; }
+.tag-template .effect-winston:hover .no-cover .ng_post_meta a { color: #fff; }
+.tag-template .ng_post_time, .tag-template .ng_post_author, .tag-template .ng_post_tags, .tag-template .ng_featured_post {display: inline-block;}
+
+
+/*************************
+	6.Author style
+*************************/
+
+.author-profile { 
+	display: flex;
+	padding: 38px 0;
+}
+
+.author-image {
+	background-color: #cccccc;
+	background-image: url("../img/ava.png");
+    background-position: center center;
+	background-repeat: no-repeat;
+    background-size: cover;
+    border: 9px solid #fff;
+    border-radius: 50%;
+    display: block;
+    height: 138px;
+	margin: 0 auto;
+    position: relative;
+    width: 138px;
+}
+
+.author-image a {
+	background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    display: block;
+    height: 120px;
+    position: relative;
+    width: 120px;
+}
+
+.author-template .author-profile p { font-family: open sans; font-size: 14px; }
+.author-template .ng-blog-cover h1 { margin: 0 0 10px; text-align: left; }
+.author-profile .author-meta { font-size: 12px;font-weight: normal;}
+.author-profile .author-meta ul { list-style: outside none none; padding: 0; line-height: 1.3; }
+.author-profile .author-meta li {
+	font-family: open sans;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    padding-right: 0.5em;
+    top: 10px;
+    left: 0;
+}
+
+.author-profile .author-meta a { color: #ffffff; font-family: open sans; }
+.web:before, .map:before, .pencil:before { font-family: fontawesome; }
+.web:before { content: "\f0ac"; margin-right: 10px; }
+.map:before { content: "\f041"; margin-right: 13px; }
+.pencil:before { content: "\f040"; margin-right: 8px; }
+.author-template .post {
+	float: left;
+    width: 25%;
+	-webkit-transition: width 2s, height 2s,-webkit-transform 2s; 
+    transition: width 2s, height 2s, transform 2s;
+}
+
+.author-template .post:first-child { height: 475px; width: 50%; }
+.author-template .post:nth-child(10n+0){ height: 475px; width: 50%; }
+.author-template .effect-winston .ng_post_meta{
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,20px,0);
+	transform: translate3d(0,20px,0);
+}
+
+.author-template .effect-winston:hover .ng_post_meta {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.author-template .effect-winston .no-cover .ng_post_meta {
+	color: #666666;
+	opacity: 1;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(0,20px,0);
+	transform: translate3d(0,20px,0);
+}
+
+.author-template .effect-winston:hover .no-cover .ng_post_meta {
+	color: #fff;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.author-template .ng_post_meta { font-size: 10px; }
+
+
+/*************************
+	7.Static page style
+*************************/
+
+.post.page { margin-bottom: 70px; }
+
+
+/*************************
+	8.Grid style
+*************************/
+
+.grid {
+	clear: both;
+	height: 100%;
+	position: relative;
+}
+
+.grid  {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid-sizer { width: 20%; }
+.grid  img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+	width: 100%;
+}
+
+.grid  .mask {
+	padding: 2em;
+	color: #fff;
+	text-transform: none;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid  .mask::before,
+.grid  .mask::after {
+	pointer-events: none;
+}
+
+.grid  .mask,
+.grid  .mask > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid  .mask > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid  h3 {
+	font-weight: 300;
+}
+
+.grid  h3 span {
+	font-weight: 800;
+}
+
+.grid  h3,
+.grid  p,
+.grid.ng_post_meta 
+{
+	margin: 0;
+}
+
+.grid  p {
+	font-family: open sans;
+	font-weight: normal;
+	letter-spacing: 1px;
+	font-size: 68.5%;
+	opacity: 0;
+}
+
+.effect-winston {
+	text-align: left;
+	height: 100%;
+	width: 100%;
+}
+
+.effect-winston .mask::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000 ;
+	background-size: 100% 100%;
+	content: '';
+	-webkit-transition: opacity 0.45s, -webkit-transform 0.45s;
+	transition: opacity 0.45s, transform 0.45s;
+}
+
+.effect-winston h3{
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,20px,0);
+	transform: translate3d(0,20px,0);
+}
+
+.effect-winston a {
+	color: #fff;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.effect-winston a:hover,
+.effect-winston a:focus {
+	color: #fff;
+}
+
+.effect-winston:hover img {
+	opacity: 0.6;
+}
+
+.effect-winston:hover h3 {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.effect-winston:hover .mask::before {	opacity: 0.7;}
+
+.effect-winston p {
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(0,30px,0);
+	transform: translate3d(0,30px,0);
+}
+
+.effect-winston:hover p{
+	opacity: 1;
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+}
+
+.effect-winston .no-cover h3 {
+	opacity: 1;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,20px,0);
+	transform: translate3d(0,20px,0);
+}
+
+.effect-winston:hover h3 {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.effect-winston:hover {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.effect-winston .no-cover h3 > a {color: #333;}
+.effect-winston:hover .no-cover h3 > a {color: #fff;}
+.effect-winston .no-cover p {
+	color: #666666;
+	opacity: 1;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(0,30px,0);
+	transform: translate3d(0,30px,0);
+}
+
+.effect-winston:hover .no-cover p {
+	color: #fff;
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+}
+
+
+/*************************
+	9.Disqus style
+*************************/
+
+.disqus-container {
+	border-top: 1px solid #ccc;
+    padding-top: 70px;
+}
+
+#disqus_thread { margin-bottom: 70px; }
+
+
+/*************************
+	10.Media Queries
+*************************/
+
+@media ( max-width: 990px ) {   	
+
+	.main-header { margin: 0; }
+	
+	.home-template .post , 
+	.home-template .post:nth-child(10n+0), 
+	.archive-template .post,
+	.author-template .post,
+	.author-template .post:nth-child(10n+0),
+    .tag-template	.post{
+		height: 50%; width: 50%;
+	}
+	
+	.home-template .post:first-child,
+	.archive-template .post:first-child,
+	.author-template .post:first-child,
+	.tag-template .post:first-child {
+		height: 100%; width: 100%;
+	}
+	
+	.main-header { margin: 0; }	
+	.author-template .ng-blog-cover h1, 
+	.author-template .author-profile p,
+	.author-profile .author-meta,
+	.author-profile-bottom { text-align: center; }
+	.author-profile { display: block; }
+	
+}
+
+@media ( max-width: 770px ) {   
+
+	.home-template .post , 
+	.archive-template .post, 
+	.author-template .post:nth-child(10n+0) {
+		height: 50%; width: 50%;
+	}
+	
+	.home-template .post:first-child,
+	.archive-template .post:first-child,
+	.author-template .post:first-child {
+		height: 100%; width: 100%;
+	}
+	
+	.main-header { margin: 0; }
+	
+}
+
+@media ( min-width: 250px ) and ( max-width: 550px ) {   
+
+	.home-template .post , 
+	.home-template .post:first-child, 
+	.home-template .post:nth-child(10n+0), 
+	.archive-template .post,
+	.archive-template .post:first-child, 
+	.author-template .post,	
+	.author-template .post:first-child, 
+	.author-template .post:nth-child(10n+0),
+	.tag-template .post,
+	.tag-template .post:first-child,
+	.tag-template .post:nth-child(10n+0) {
+		height: 100%; width: 100%;
+	}
+	
+	.post-head.main-header { margin:0; }
+	
+	.text-soc-l, .soc-inner {
+		float: none !important;
+		margin-bottom: 15px;
+		text-align: center;
+	}
+	
+}
+
+
+/**********************************************************/

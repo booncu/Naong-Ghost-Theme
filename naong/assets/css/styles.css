@@ -1,0 +1,333 @@
+/* ==========================================================================
+   Table of Contents
+   ========================================================================== */
+
+/*
+
+	1.  General
+	2.  Header & Navigation Menus
+	3.  Cover
+	4.  Main container global
+	5.  Footer
+	6.  Button
+	7.  Pagination
+	8.	404 page error
+	9.  ScrollUp
+  10. Media Queries 
+	
+*/
+
+
+/* ==========================================================================
+   1. General - Setting up some base styles
+   ========================================================================== */
+
+
+html, body { height: 100%; }
+body {
+  color: #777777;
+  font-family: "Helvetica Neue", Helvetica, open sans, Arial, sans-serif;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-weight: bold; }
+
+a {
+  color: #ed1a23;
+  text-decoration: none;
+}
+
+a:hover, a:focus { color: #000000; text-decoration: none; }
+
+body p {
+	font-size: 16px;
+  margin: 0 0 24px; 
+	line-height: 1.8;
+}
+
+img { max-width: 100%; }
+
+#ng-wrapper { height: 100%; }
+
+/* ==========================================================================
+   2. Header & Navigation Menus
+   ========================================================================== */
+
+.navbar-static-top {
+  margin-bottom: 0px;
+}
+
+.navbar-default {
+  background-color: #ed1a23;
+  border-top: 3px solid #FFFFFF;
+  border-bottom: 3px solid #FFFFFF;
+}
+
+.navbar-default .navbar-toggle {
+  border: 0 none;
+  border-radius: 0;
+  margin: 19px;
+  padding: 10px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #fff;
+  height: 5px;
+  width: 30px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+  font-size: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-brand.text {
+	font-size: 30px;
+  padding: 30px 15px;
+  text-transform: uppercase;
+}
+.navbar-default .navbar-brand:hover { color: #000000; }
+
+.navbar-nav > li:last-child{ border-right: 1px solid #FFFFFF; }
+
+.navbar-nav > li {
+  border-left: 1px solid #FFFFFF;
+}
+
+.navbar-nav > li > a {
+	padding: 40px 20px 20px;
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+	color: #fff;
+	padding: 30px 20px;
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  background: none;
+  color: #FFFFFF;
+	padding: 30px 20px;
+}
+
+
+/* ==========================================================================
+   3. Cover
+   ========================================================================== */
+
+.ng-overlay-cover { background-color:rgba(0, 0, 0, 0.3); height: 300px; }
+.ng-overlay-cover.jumbotron { margin-bottom: 70px; }
+
+.ng-blog-cover {
+	background-color: #efefef;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+}
+
+.ng-blog-cover h1 {
+	font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.ng-blog-cover h3 { 
+	font-family: open sans;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.home-template .ng-blog-cover h1, .archive-template .ng-blog-cover h1 { font-size: 46px; margin-top: 60px; }
+
+.tag-template .ng-blog-cover h1 { text-transform: uppercase; }
+
+
+/* ==========================================================================
+   4. Main container global
+   ========================================================================== */
+
+.ng-container {
+	clear: both;
+  display: block;
+	padding: 0;
+  position: relative;
+}
+
+
+/* ==========================================================================
+   5. Footer
+   ========================================================================== */
+
+.ng-footer { background-color: #353535;  border-top: 5px solid #111111; color: #666; } 
+.ng-block-footer { padding: 54px 0; text-align: center; }
+.ng-copyright { padding-top: 20px; text-align: center; }
+.ng-copyright p { font-size: 18px; }
+.ng-copyright a { color: #666; }
+
+.ng-block-footer .btn {
+	background: none repeat scroll 0 0 #777;
+	border: 0;
+  border-radius: 50%;
+	font-size: 18px;
+  height: 48px;
+  line-height: 48px;
+  margin: 0 2px;
+  padding: 0;
+  text-align: center;
+  width: 48px;
+}
+
+
+/* ==========================================================================
+   6. Button 
+   ========================================================================== */
+
+.btn-default {
+  background-color: #858585;
+  border-color: #cccccc;
+  color: #333333;
+}
+
+.ng-next .btn, .ng-prev .btn { border-radius: 0; }
+
+
+/* ==========================================================================
+   7. Pagination 
+   ========================================================================== */
+
+#ng-block-pag {
+	float: left;
+  margin: 36px 0px 48px;
+  position: relative;
+	max-width: 100%;
+  width: 100%;	
+}
+
+#ng-pagination .container { padding: 0; }
+.ng-next { padding-right: 0; text-align: right; }
+.ng-prev { padding-left: 0; text-align: left; }
+.ng-next span, .ng-prev span{ font-size: 12px; }
+.ng-page-count { text-align: center; }
+.ng-page-count .ng-block{ padding: 6px 0; }
+.ng-page-number { font-size: 18px; color: #999; }
+
+
+/* ==========================================================================
+   8. 404 Page Error 
+   ========================================================================== */
+
+.ng-post-content-error  { color: #fff; text-align: center; }
+.ng_post_error { height: 100%; }
+.ng-post-content-error h1 { font-size: 300px; margin: 20px 0; }
+
+.ng-post-content-error p {
+	font-family: open sans;
+  font-size: 20px;
+  letter-spacing: 5px;
+  margin: 0 0 40px;
+  text-transform: uppercase;
+}
+
+.ng-post-content-error .btn { border-radius: 0; }
+.wrap-background { background-size: cover; height: 100%; }
+.ng-overlay-post-error { background-color: rgba(0, 0, 0, 0.3);height: 100%; }
+
+
+/* ==========================================================================
+   9. ScrollUp 
+   ========================================================================== */
+
+#scrollUp {
+    background-image: url("../img/top.png");
+    bottom: 20px;
+    right: 20px;
+    width: 38px;    
+    height: 38px;  
+}
+
+
+/* ==========================================================================
+   10. Media Queries
+   ========================================================================== */
+
+@media ( min-width: 448px ) and ( max-width: 3000px ) { .ng-next-posts-n, .ng-prev-posts-p {display: none;} }
+
+@media ( min-width: 320px ) and ( max-width: 990px ) { .ng-overlay-cover {height: auto; padding: 48px 0;} }
+	
+@media only screen and ( max-width: 990px ) { 
+   
+  .container{
+    width:auto !important;
+    max-width:auto !important;
+  }
+	
+	.home-template .jumbotron,
+	.author-template .jumbotron,
+	.archive-template .jumbotron,
+	.tag-template .jumbotron {
+		margin-bottom: 0px;
+	}
+	
+	.home-template .col-md-12 { padding-left: 0; padding-right: 0; }
+	.home-template .ng-next .btn, 
+	.ng-prev .btn, 
+	.archive-template .ng-next .btn, 
+	.ng-prev .btn,
+	.author-template .ng-next .btn,
+	.ng-prev .btn,
+	.tag-template .ng-next .btn{
+		padding: 20px;
+	}
+	
+	.home-template .ng-page-count .ng-block, 
+	.archive-template .ng-page-count .ng-block,
+	.author-template .ng-page-count .ng-block,
+	.tag-template .ng-page-count .ng-block { padding: 20px 0; }
+	#ng-block-pag { margin: 0; }
+	
+}
+
+@media only screen and ( max-width: 765px ) {    
+
+	.navbar-nav > li, .navbar-nav > li:last-child { border: 0; }
+	.navbar-nav > li > a {
+		line-height: inherit;
+	}
+
+	.navbar-default .navbar-toggle:hover,
+	.navbar-default .navbar-toggle:focus {
+		background: none;
+	}
+	
+}
+
+@media only screen and ( max-width: 480px ) {	.ng-post-content-error h1 {font-size: 160px; } }
+
+@media only screen and ( max-width: 448px ) { .ng-next-posts, .ng-prev-posts {display: none; }}
+
+@media only screen and ( max-width: 320px ) {
+
+	.ng-post-content-error h1 { font-size: 160px; }
+	.ng-overlay-cover { height: auto; padding: 48px 0; }
+	
+}
+
+/**********************************************************/

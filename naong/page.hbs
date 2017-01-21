@@ -1,0 +1,79 @@
+{{!< default}}
+
+{{! Header & Navigation }}
+
+	<header id="ng-header">
+		<div class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle bounceInDown animated" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					   {{#if @blog.logo}}<a class="navbar-brand" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="" /></a>{{else}}<a class="navbar-brand text" href="{{@blog.url}}">naong</a>{{/if}}
+				</div>
+
+				 {{navigation}}
+
+			</div>
+		</div>
+	</header>
+
+{{! The main cover area on the static page }}
+
+<section id="ng-cover">
+	{{#post}}
+		<div class="ng-blog-cover"	style="{{^if image}}background-image: url({{@blog.cover}}){{else}}background-image: url({{image}}){{/if}}">
+			<div class="ng-overlay-cover jumbotron">
+				<div class="container">
+					<article class="{{post_class}}_inner">
+				        <div class="ng_post_header">
+				             <h1 class="ng_post_title">{{{title}}}</h1>
+				        </div>
+				     </article>
+				</div>
+			 </div>
+		 </div>
+	{{/post}}
+</section>
+
+{{! The main content area on the static page }}
+
+	<main id="ng-wrapper-mainbody" class="ng_page">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				 {{#post}}
+					<div class="at_block">
+						<article class="{{post_class}}">
+							<div class="at_post_content">
+								{{content}}
+							</div>
+						</article>
+					</div>
+				{{/post}}
+			</div>
+		</div>
+	</div>
+</main>
+
+{{! Footer area }}
+
+<footer id="ng-footer" class="ng-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="ng-block-footer">
+						<a class="btn btn-default" href="#"><i class="fa fa-facebook"></i></a>
+						<a class="btn btn-default" href="#"><i class="fa fa-twitter"></i></a>
+						<a class="btn btn-default" href="#"><i class="fa fa-linkedin"></i></a>
+						<a class="btn btn-default" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i></a>
+						<div class="ng-copyright">
+							<p>All content <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}. Proudly published with <a href="https://ghost.org">Ghost</a></p>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

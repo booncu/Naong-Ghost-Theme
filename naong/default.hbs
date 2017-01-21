@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+	  <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "/favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+	  <link rel="stylesheet" type="text/css" href="{{asset "bootstrap/css/bootstrap.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/styles.css"}}" />
+	  <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" />
+	  <link rel="stylesheet" type="text/css" href="{{asset "css/animate.css"}}" />
+	  <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+
+</head>
+<body class="{{body_class}}">
+	<div id="ng-wrapper">
+		{{! Everything else gets inserted here }}
+		{{{body}}}
+	</div>
+
+    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The JavaScript file for Naong }}
+	<script type="text/javascript" src="{{asset "bootstrap/js/bootstrap.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/jquery.scrollUp.min.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/typed.js"}}"></script>
+</body>
+</html>

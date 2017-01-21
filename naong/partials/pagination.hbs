@@ -1,0 +1,37 @@
+{{! Pagination}}
+
+<div id="ng-pagination">
+	<div class="container">
+		<div id="ng-block-pag">
+			<div class="ng-prev col-md-2 col-xs-3">
+				<div class="ng-block">
+					{{#if prev}}
+						<a class="btn btn-danger ng-prev-posts" href="{{page_url prev}}"><span>Newer Posts</span></a>
+					{{/if}}
+
+					{{#if prev}}
+						<a class="btn btn-danger ng-prev-posts-p" href="{{page_url prev}}"><span class="fa  fa-angle-left"></span></a>
+					{{/if}}
+				</div>
+			</div>
+
+			<div class="ng-page-count col-md-8 col-xs-6">
+				<div class="ng-block">
+					<span class="ng-page-number">Page {{page}} of {{pages}}</span>
+				</div>
+			</div>
+
+			<div class="ng-next col-md-2 col-xs-3">
+				<div class="ng-block">
+						{{#if next}}
+							<a class="btn btn-danger ng-next-posts" href="{{page_url next}}"><span>Older Posts</span> </a>
+						{{/if}}
+
+						{{#if next}}
+							<a class="btn btn-danger ng-next-posts-n" href="{{page_url next}}"><span class="fa  fa-angle-right"></span> </a>
+						{{/if}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
