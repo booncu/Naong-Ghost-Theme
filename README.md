@@ -1,4 +1,4 @@
-# Ghost
+# Naong Ghost Theme
 Ghost themes Freebies
 
 Sorry old version, maybe it's out of date
